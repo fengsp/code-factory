@@ -1,0 +1,9 @@
+{% import 'macros.html' as macros %}
+<dl>
+    <dt>Username</dt>
+    <dd>{{ macros.input('username') }}</dd>
+    <dt>Password</dt>
+    <dd>{{ macros.input('password', type='password') }}</dd>
+</dl>
+<p>{{ macros.textarea('comment') }}</p>
+

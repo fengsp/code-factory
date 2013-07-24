@@ -1,0 +1,15 @@
+(dp0
+S'pay'
+p1
+I200000
+sS'age'
+p2
+I35
+sS'name'
+p3
+S'tom'
+p4
+sg4
+S'archit'
+p5
+s.

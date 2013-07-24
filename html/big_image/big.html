@@ -1,0 +1,131 @@
+<!DOCTYPE HTML>
+<html>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
+<head>
+	<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+	        <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
+<style type="text/css">
+	*{
+		margin: 0;
+		padding: 0;
+	}
+#content img {
+	vertical-align: middle;
+	margin: 10px;
+}
+/*=====================================*/
+
+#modalDialog {
+	position: absolute;
+	top: 0;
+	left: 0;
+	right: 0;
+	z-index: 99999;
+	display: none;
+	pointer-events: none;
+	text-align: center;
+}
+#modalMask {
+	position: fixed;
+	top: 0;
+	left: 0;
+	right: 0;
+	bottom: 0;
+	background-color: rgba(0,0,0,0.8);
+	z-index: 9999;
+	opacity: 0;
+	transition: opacity 0.4s ease-in;
+	-webkit-transition: opacity 0.4s ease-in;
+	pointer-events: none;
+}	
+#bigImage {
+	background-color: white;
+	margin: 5% auto;
+	position: relative;
+	text-align: center;
+	display: inline-block;
+}
+#bigImageReal {
+	display: block;	
+}
+.close {
+	position: absolute;
+	right: 8px;
+	top: 8px;
+	display: block;
+	width: 40px;
+	height: 40px;
+	background: url('./modal_close.png') no-repeat;
+	background-size: 100% 100%;
+}	
+</style>
+<script type="text/javascript">
+var lastPosition;
+function $(id) { return document.getElementById(id); }
+function imgClick() {	
+	lastPosition = window.scrollY; 
+	window.scrollTo(0, 0);
+	$('bigImageReal').style.maxWidth = (document.documentElement.clientWidth - 10) + "px";
+	$('bigImageReal').src = this.getAttribute('href');
+	$('modalDialog').style.display = 'block';
+	$('modalDialog').style.pointerEvents = 'auto';
+	$('modalMask').style.opacity = 1;
+	$('modalMask').style.pointerEvents = 'auto';
+	return false;
+}
+function imgWidthCtrl() {
+	$('bigImageReal').style.maxWidth = (document.documentElement.clientWidth - 10) + "px";
+}
+window.addEventListener('DOMContentLoaded', function() {
+	for(var i=0,e; e=$('content').childNodes[i++];) {
+		e.onclick = imgClick;
+	}
+	$('close').addEventListener('click', function(){
+		$('modalDialog').style.display = 'none';
+		$('modalDialog').style.pointerEvents = 'none';
+		$('modalMask').style.opacity = 0;
+		$('modalMask').style.pointerEvents = 'none';
+		window.scrollTo(0, lastPosition);
+		return false;
+	}, false);
+	$('bigImageReal').style.maxWidth = (document.documentElement.clientWidth - 10) + "px"; 
+}, false);
+window.addEventListener('resize', imgWidthCtrl, false);
+</script>
+</head>
+<body>
+<!-- 汉语测试 -->
+<!-- http://e.hiphotos.baidu.com/album/w%3D2048/sign=65814dd538dbb6fd255be2263d1caa18/42a98226cffc1e17bed9751f4b90f603738de9be.jpg -->
+<!-- http://f.hiphotos.baidu.com/album/w%3D2048/sign=c179fdb3caef76093c0b9e9f1ae5a2cc/2cf5e0fe9925bc3191edf8b65fdf8db1cb137068.jpg -->
+<div id="content">
+	
+	<a href="http://e.hiphotos.baidu.com/album/w%3D230/sign=e640c2ea1ad5ad6eaaf963e9b1cb39a3/42a98226cffc1e17bed9751f4b90f603738de9be.jpg"><img src="http://e.hiphotos.baidu.com/album/w%3D230/sign=e640c2ea1ad5ad6eaaf963e9b1cb39a3/42a98226cffc1e17bed9751f4b90f603738de9be.jpg"></a>
+	<a href="http://f.hiphotos.baidu.com/album/w%3D2048/sign=c179fdb3caef76093c0b9e9f1ae5a2cc/2cf5e0fe9925bc3191edf8b65fdf8db1cb137068.jpg"><img src="http://f.hiphotos.baidu.com/album/w%3D230/sign=6cc9612a5882b2b7a79f3ec701accb0a/2cf5e0fe9925bc3191edf8b65fdf8db1cb137068.jpg"></a>
+	<a href="http://m.iphotoscrap.com/Image/209/1225158981.jpg"><img src="http://a1.att.hudong.com/06/65/01300000819101126868658858473.jpg"></a>
+	<a href="http://e.hiphotos.baidu.com/album/w%3D230/sign=e640c2ea1ad5ad6eaaf963e9b1cb39a3/42a98226cffc1e17bed9751f4b90f603738de9be.jpg"><img src="http://e.hiphotos.baidu.com/album/w%3D230/sign=e640c2ea1ad5ad6eaaf963e9b1cb39a3/42a98226cffc1e17bed9751f4b90f603738de9be.jpg"></a>
+	<a href="http://f.hiphotos.baidu.com/album/w%3D2048/sign=c179fdb3caef76093c0b9e9f1ae5a2cc/2cf5e0fe9925bc3191edf8b65fdf8db1cb137068.jpg"><img src="http://f.hiphotos.baidu.com/album/w%3D230/sign=6cc9612a5882b2b7a79f3ec701accb0a/2cf5e0fe9925bc3191edf8b65fdf8db1cb137068.jpg"></a>
+	<a href="http://m.iphotoscrap.com/Image/209/1225158981.jpg"><img src="http://a1.att.hudong.com/06/65/01300000819101126868658858473.jpg"></a>
+	<a href="http://e.hiphotos.baidu.com/album/w%3D230/sign=e640c2ea1ad5ad6eaaf963e9b1cb39a3/42a98226cffc1e17bed9751f4b90f603738de9be.jpg"><img src="http://e.hiphotos.baidu.com/album/w%3D230/sign=e640c2ea1ad5ad6eaaf963e9b1cb39a3/42a98226cffc1e17bed9751f4b90f603738de9be.jpg"></a>
+	<a href="http://f.hiphotos.baidu.com/album/w%3D2048/sign=c179fdb3caef76093c0b9e9f1ae5a2cc/2cf5e0fe9925bc3191edf8b65fdf8db1cb137068.jpg"><img src="http://f.hiphotos.baidu.com/album/w%3D230/sign=6cc9612a5882b2b7a79f3ec701accb0a/2cf5e0fe9925bc3191edf8b65fdf8db1cb137068.jpg"></a>
+	<a href="http://m.iphotoscrap.com/Image/209/1225158981.jpg"><img src="http://a1.att.hudong.com/06/65/01300000819101126868658858473.jpg"></a>
+	<a href="http://e.hiphotos.baidu.com/album/w%3D230/sign=e640c2ea1ad5ad6eaaf963e9b1cb39a3/42a98226cffc1e17bed9751f4b90f603738de9be.jpg"><img src="http://e.hiphotos.baidu.com/album/w%3D230/sign=e640c2ea1ad5ad6eaaf963e9b1cb39a3/42a98226cffc1e17bed9751f4b90f603738de9be.jpg"></a>
+	<a href="http://f.hiphotos.baidu.com/album/w%3D2048/sign=c179fdb3caef76093c0b9e9f1ae5a2cc/2cf5e0fe9925bc3191edf8b65fdf8db1cb137068.jpg"><img src="http://f.hiphotos.baidu.com/album/w%3D230/sign=6cc9612a5882b2b7a79f3ec701accb0a/2cf5e0fe9925bc3191edf8b65fdf8db1cb137068.jpg"></a>
+	<a href="http://m.iphotoscrap.com/Image/209/1225158981.jpg"><img src="http://a1.att.hudong.com/06/65/01300000819101126868658858473.jpg"></a>
+	<a href="http://e.hiphotos.baidu.com/album/w%3D230/sign=e640c2ea1ad5ad6eaaf963e9b1cb39a3/42a98226cffc1e17bed9751f4b90f603738de9be.jpg"><img src="http://e.hiphotos.baidu.com/album/w%3D230/sign=e640c2ea1ad5ad6eaaf963e9b1cb39a3/42a98226cffc1e17bed9751f4b90f603738de9be.jpg"></a>
+	<a href="http://f.hiphotos.baidu.com/album/w%3D2048/sign=c179fdb3caef76093c0b9e9f1ae5a2cc/2cf5e0fe9925bc3191edf8b65fdf8db1cb137068.jpg"><img src="http://f.hiphotos.baidu.com/album/w%3D230/sign=6cc9612a5882b2b7a79f3ec701accb0a/2cf5e0fe9925bc3191edf8b65fdf8db1cb137068.jpg"></a>
+	<a href="http://ww2.sinaimg.cn/large/6767455bjw1e61d2vxekbj20hs1jkwig.jpg"><img src="http://ww2.sinaimg.cn/large/6767455bjw1e61d2vxekbj20hs1jkwig.jpg" style="width:10px"></a>
+	<!--
+	<a href="#"><img src="http://e.hiphotos.baidu.com/album/w%3D230/sign=e640c2ea1ad5ad6eaaf963e9b1cb39a3/42a98226cffc1e17bed9751f4b90f603738de9be.jpg"></a>
+	<a href="#"><img src="http://f.hiphotos.baidu.com/album/w%3D230/sign=6cc9612a5882b2b7a79f3ec701accb0a/2cf5e0fe9925bc3191edf8b65fdf8db1cb137068.jpg"></a>
+	<a href="#"><img src="http://a1.att.hudong.com/06/65/01300000819101126868658858473.jpg"></a>
+	-->
+</div>
+<div id="modalDialog">
+	<div id="bigImage">
+		<a id="close" class="close"></a>
+		<img id="bigImageReal">
+	</div>
+</div>
+<div id="modalMask"></div>
+</body>
+</html>

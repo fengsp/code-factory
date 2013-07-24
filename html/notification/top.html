@@ -1,0 +1,33 @@
+<!DOCTYPE HTML>
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
+<style type="text/css">
+#note {
+    position: absolute;
+    z-index: 101;
+    top: 0;
+    left: 0;
+    right: 0;
+    background-color: #fde073;
+    text-align: center;
+    line-height: 2.5;
+    overflow: hidden;
+    max-height: 45px;
+    -webkit-transform: translateY(-50px);
+    -webkit-box-shadow: 0 0 5px black;
+    -webkit-animation: slideDown 2.5s 1.0s 1 ease forwards;
+}
+@-webkit-keyframes slideDown {
+    0%, 100% { -webkit-transform: translateY(-50px); }
+    10%, 90% { -webkit-transform: translateY(0px); }
+}
+</style>
+</head>
+<body>
+<!-- 汉语测试 -->
+<div id="note">
+There is no more message!
+</div>
+</body>
+</html>

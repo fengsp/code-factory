@@ -1,0 +1,163 @@
+<!DOCTYPE HTML>
+<html>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
+<head>
+<style type="text/css">
+body {
+	font-family: Arial, Helvetica, Helvetica Neue, Verdana, sans-serif;
+	font-size: 13px;
+	line-height: 18px;
+	color: #555;
+	background-color: #000;
+}
+div#dockContainer {
+	position: fixed;
+	bottom: 60px;
+	height: 120px;
+	padding: 50px 0 0;
+	text-align: center;
+	-webkit-border-radius: 6px;
+	width: 100%;
+	line-height: 1;
+	z-index: 100;
+}
+div#dockWrapper {
+	width: auto;
+	display: inline-block;
+	position: relative;
+	border-bottom: solid 2px rgba(255,255,255,.35);
+	line-height: 0;
+}
+ul li {
+	list-style: none outside;
+}
+div.cap {
+	display: block;
+	height: 100px;
+	width: 40px;
+	background: url(./img/dock-background-left.png) bottom left no-repeat;
+}
+div.cap.left {
+	position: absolute;
+	bottom: 0px;
+	left: 0px;
+	float: left;
+}
+ul.osx-dock li {
+	display: block;
+	position: relative;
+	float: left;
+	width: 50px;
+	height: 50px;
+	margin: 60px 0 4px 0;
+	-webkit-transition: 0.15s linear;
+	-webkit-transition-property: -webkit-transform margin;
+	text-align: center;
+	line-height: 18px;
+}
+ul.osx-dock li a {
+	display: block;
+	height: 50px;
+	padding: 0 1px;
+	-webkit-transition: 0.15s linear;
+	-webkit-transition-property: -webkit-transform margin;
+	margin: 0;
+	-webkit-box-reflect: below 2px -webkit-gradient(linear, left top, left bottom, from(transparent), color-stop(0.45, transparent), to(rgba(255, 255, 255, 0.25)));
+}
+ul.osx-dock li a img {
+	width: 48px;
+}
+ul.osx-dock li:hover {
+	margin-left: 9px; margin-right: 9px;
+	z-index: 200;
+}
+ul.osx-dock li:hover a {
+	-webkit-transform-origin: center bottom;
+	-webkit-transform: scale(1.5);
+}
+ul.osx-dock li.nearby {
+	margin-left: 6px; margin-right: 6px;
+	z-index: 100;
+}
+ 
+ul.osx-dock li.nearby a {
+	-webkit-transform-origin: center bottom;
+	-webkit-transform: scale(1.25);
+}
+ul.osx-dock li span {
+	background: rgba(0,0,0,0.75);
+	position: absolute;
+	bottom: 80px;
+	margin: 0 auto;
+	display: block;
+	width: auto;
+	font-size: 11px;
+	font-weight: bold;
+	padding: 3px 6px;
+	-webkit-border-radius: 6px;
+	color: #fff;
+}
+ul.osx-dock li:hover span {
+	display: block;
+}
+ul.osx-dock {
+	display: inline-block;
+	height: 130px;
+	padding: 0 40px 0 0;
+	background: url(./img/dock-background-left.png) no-repeat right bottom;
+	overflow: hidden;
+	margin: 0 0 0 40px;
+}
+</style>
+</head>
+<body>
+<!-- 汉语测试 -->
+<div id="dockContainer">
+<div id="dockWrapper">
+<div class="cap left"></div>
+<ul class="osx-dock">
+	<li>
+		<span>ZURB</span>
+		<a href="http://www.zurb.com" title="ZURB"><img src="./img/zurb-icon.png" /></a>
+	</li>
+	<li>
+		<span>LinkedIn</span>
+		<a href="http://www.linkedin.com" title="LinkedIn"><img src="./img/linkedin-icon.png" /></a>
+	</li>
+	<li>
+		<span>Notable</span>
+		<a href="http://www.notableapp.com" title="Notable"><img src="./img/notable-icon.png" /></a>
+	</li>
+	<li>
+		<span>last.fm</span>
+		<a href="http://www.last.fm" title="Last.fm"><img src="./img/lastfm-icon.png" /></a>
+	</li>
+	<li>
+		<span>Facebook</span>
+		<a href="http://www.facebook.com" title="Facebook"><img src="./img/facebook-icon.png" /></a>
+	</li>
+	<li>
+		<span>Google</span>
+		<a href="http://www.google.com" title="Google"><img src="./img/google-icon.png" /></a>
+	</li>
+	<li>
+		<span>Notable</span>
+		<a href="http://www.notableapp.com" title="Notable"><img src="./img/notable-icon.png" /></a>
+	</li>
+	<li>
+		<span>last.fm</span>
+		<a href="http://www.last.fm" title="Last.fm"><img src="./img/lastfm-icon.png" /></a>
+	</li>
+	<li>
+		<span>Facebook</span>
+		<a href="http://www.facebook.com" title="Facebook"><img src="./img/facebook-icon.png" /></a>
+	</li>
+	<li>
+		<span>Google</span>
+		<a href="http://www.google.com" title="Google"><img src="./img/google-icon.png" /></a>
+	</li>
+</ul>
+</div>
+</div>
+</body>
+</html>

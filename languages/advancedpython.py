@@ -118,6 +118,99 @@ Classic classes and instances are separate types
 Lots of new general mechanisms
 inherit from object
 """
+"""Descriptors
+Special objects stored in class attributes
+__get__, __set__, __delete__ methods 
+The mechanism behind property():
+    accessors hidden behind normal attribute access
 """
+class Calculate(object):
+    
+    def __get__(self, obj, objtype):
+        return 'calculate get', obj, objtype
+"""Properties
+"""
+class SomeClass(object):
+    
+    def get_prop(self):
+        if not hasattr(self, '_cached_prop'):
+            SomeClass._cached_prop = Calculate()
+        return self._cached_prop
+    prop = property(get_prop)
+x = SomeClass()
+print x.prop
+"""Classmethods and staticmethods
+instancemethods take self argument
+classmethods take cls argument
+staticmethods take no magic argument( not very useful)
+"""
+class FancyDict(dict):
+    @classmethod
+    def fromkeys(cls, keys, value=None):
+        data = [(key, value) for key in keys]
+        return cls(data)
+    # So we are using decorator syntax....
+    # ...or manually
+    # fromkeys = classmethod(fromkeys)
+MyDict = FancyDict(key1='value1', key2='value2', key3='value3')
+print MyDict.fromkeys(['key1', 'key2'], 'fsp')
+"""__slots__
+Omit __dict__ for Python instances
+Reduces memory use
+Allows for immutable Python classes
+"""
+class Tiny(object):
+    __slots__ = ['value']
+    def __init__(self, value):
+        self.value = value
+t = Tiny(1)
+print t.value
+try:
+    t.fsp = 'fsp'
+except AttributeError, e:
+    print e
+"""Actual constructor(__new__)
+Actual constructor method
+staticmethod, not instancemethod
+"""
+class WrappingInt(int):
+    __slots__ = []
+    def __new__(cls, value):
+        value = value % 255
+        self = int.__new__(cls, value)
+        return self
+wrappingInt = WrappingInt(256)
+print wrappingInt
+"""Metaclasses
+the class that creates a class
+metacls.__new__, __init__, __getattr__
+Useful for post-processing classes
+Capable of much more magic (Danger)
+"""
+class ManglingType(type):
+    def __new__(cls, name, bases, attrs):
+        print cls, name, bases, attrs
+        for attr, value in attrs.items():
+            if attr.startswith("__"):
+                continue    # avoid doing something to magical methods
+            attrs["foo_" + attr] = value
+            del attrs[attr]
+        return type.__new__(cls, name, bases, attrs)
 
+class MangledClass:
+    __metaclass__ = ManglingType
+mangledClass = MangledClass()
+"""Multiple Inheritance Done Right(C3 MRO)
+depth-first, left-to-right search
+super() for continuing method resolution
+super(ThisClass, self) returns proxy object
 """
+"""Unicode
+(byte)strings describe bytes
+unicode describe characters
+Unicode can only be stored in encoding
+To get characters from bytes decode
+To get bytes from characters: encode
+UTF-8 can encode all of unicode
+"""
+# Always the Python source

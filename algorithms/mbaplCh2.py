@@ -74,7 +74,11 @@ class Tree2(object):
     def __init__(self, kids, next=None):
         self.kids = self.val = kids
         self.next = next
-
+class Bunch(dict):
+    def __init__(self, *args, **kwargs):
+        print kwargs
+        super(Bunch, self).__init__(*args, **kwargs)
+        self.__dict__ = self
 
 if __name__ == '__main__':
     L = Node("a", Node("b", Node("c", Node("d"))))
@@ -90,3 +94,37 @@ if __name__ == '__main__':
     t = Tree2(Tree2("a", Tree2("b", Tree2("c", Tree2("d")))))
     t.kids.next.next.val
     print t.kids.kids
+    T = Bunch
+    T(left='fsp')
+    print '-' * 75
+    t = T(left=T(left="a", right="b"), right=T(left="c"))
+    print type(t)
+    print t.left
+    print t.left.right
+    print t['left']['right']
+    print t.__dict__
+    from random import randrange
+    L = [randrange(10000) for i in range(1000)]
+    print 42 in L  # linear
+    S = set(L)
+    print 42 in S  # constant
+    s = ""
+    for chunk in ('a', 'b', 'c'):
+        s += chunk
+    print s
+    chunks = []
+    for chunk in ('a', 'b', 'c'):
+        chunks.append(chunk)
+    s = ''.join(chunks)
+    print s
+    lists = [[1], [2]]
+    result = sum(lists, [])
+    print result
+    res = []
+    for lst in lists:
+        res.extend(lst)
+    print res
+    print sum(0.1 for i in range(10)) == 1
+    from decimal import *
+    print sum(Decimal("0.1") for i in range(10)) == Decimal("1.0")
+    

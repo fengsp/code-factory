@@ -1,0 +1,14 @@
+The ``doc`` module
+==================
+
+Using ``factorial``
+------------------
+
+This is an example...
+
+    >>> from doc import factorial
+
+Now use it:
+
+    >>> factorial(6)
+    120

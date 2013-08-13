@@ -1,0 +1,211 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<style type="text/css">
+body {
+    font-family: 'Lato', Calibri, Arial, sans-serif;
+    color: #89867e;
+    background: #f9f9f9;
+    font-size: 100%;
+    padding: 0;
+    margin: 0;
+}
+*, *:before, *:after {
+    box-sizing: border-box;
+}
+#content {
+    
+}
+.caption {
+    display: block;
+    position: relative;
+    width: 200px;
+    height: 200px;
+    margin: 10px;
+}
+.caption img {
+    display: block;
+}
+.caption:before,
+.caption:after {
+    position: absolute;
+    left: 100%;
+    width: 90%;
+    margin: 0 0 0 10%;
+    font-weight: 300;
+    color: #89867e;
+}
+.caption::before {
+    content: attr(data-title);
+    top: 0;
+    height: 25%;
+    padding: 5px 30px 15px 10px;
+    font-size: 40px;
+    border-bottom: 1px solid rgba(0,0,0,0.1);
+}
+.caption::after {
+    content: attr(data-description);
+    top: 25%;
+    padding: 20px 10px 0;
+    font-size: 18px;
+}
+.caption2 {
+    display: block;
+    position: relative;
+    margin: 10px;
+    width: 200px;
+    height: 200px;
+}
+.caption2 img {
+    display: block;
+}
+.caption2::before,
+.caption2::after {
+    opacity: 0;
+    position: absolute;
+    width: 100%;
+    color: #fff;
+    padding: 10px;
+    transition: opacity 0.3s;
+}
+.caption2::before {
+    content: attr(data-title);
+    top: 0;
+    height: 30%;
+    font-size: 40px;
+    background: #a21f00;
+    font-weight: 300;
+}
+.caption2::after {
+    content: '\201C' attr(data-description) '\201D';
+    top: 30%;
+    height: 70%;
+    background: #db2e00;
+    font-size: 16px;
+    text-align: right;
+}
+.caption2:hover::before,
+.caption2:hover::after {
+    opacity: 1;
+}
+.caption3 {
+    display: block;
+    position: relative;
+    margin: 10px;
+    width: 200px;
+    height: 200px;
+    overflow: hidden;
+}
+.caption3 img {
+    display: block;
+    transition: opacity 0.3s ease-in-out;
+}
+.caption3:hover img {
+    opacity: 0.5;
+}
+.caption3::before,
+.caption3::after {
+    height: 50%;
+    position: absolute;
+    width: 100%;
+    color: #fff;
+    z-index: 1;
+    transition: -webkit-transform 0.3s ease-in-out;
+}
+.caption3::before {
+    content: attr(data-title);
+    top: 0;
+    font-size: 40px;
+    background: #0083ab;
+    font-weight: 300;
+    padding: 20px;
+    -webkit-transform: translateY(-100%);
+}
+.caption3::after {
+    content: '...' attr(data-description) '...';
+    top: 50%;
+    background: #f27545;
+    font-size: 14px;
+    padding: 20px;
+    -webkit-transform: translateY(100%);
+}
+.caption3:hover::before,
+.caption3:hover::after {
+    -webkit-transform: translateY(0%);
+}
+.caption4 {
+    display: block;
+    position: relative;
+    margin: 10px;
+    width: 200px;
+    height: 200px;
+    overflow: hidden;
+    background: rgba(0,0,0,0.2);
+    transition: background 0.3s ease-in-out;
+}
+.caption4:hover {
+    background: rgba(0,0,0,0);
+}
+.caption4 img {
+    display: block;
+    transition: -webkit-transform 0.3s ease-in-out;
+}
+.caption4:hover img {
+    -webkit-transform: translateX(100%);
+}
+.caption4::before,
+.caption4::after {
+    position: absolute;
+    width: 100%;
+    color: #fff;
+    z-index: -1;
+    background: #cecece;
+    -webkit-transform: translateX(-30%);
+    transition: -webkit-transform 0.3s ease-in-out;
+}
+.caption4::before {
+    content: attr(data-title);
+    height: 30%;
+    color: #05b19a;
+    font-size: 40px;
+    font-weight: 300;
+    padding: 10px;
+}
+.caption4::after {
+    content: '\201C' attr(data-description) '\201D';
+    top: 30%;
+    height: 70%;
+    color: #fff;
+    font-size: 14px;
+    padding: 20px 30px;
+}
+.caption4:hover::before,
+.caption4:hover::after {
+    -webkit-transform: translateY(0%);
+}
+</style>
+<script type="text/javascript">
+</script>
+</head>
+<body>
+    <div id="content">
+        <a class="caption" href="http://fengsp.github.io" data-title="fsptitle1" data-description="I watched the four riders ...">
+        <img style="width: 200px; height: 200px; background-color:#EEAD0E"/>
+        </a>
+        
+        <a class="caption2" href="http://fengsp.github.io" data-title="fsptitle1" data-description="I watched the four riders ...">
+        <img style="width: 200px; height: 200px; background-color:#EE2C2C"/>
+        </a>
+        
+        <a class="caption3" href="http://fengsp.github.io" data-title="fsptitle1" data-description="I watched the four riders ...">
+        <img style="width: 200px; height: 200px; background-color:#36648B"/>
+        </a>
+        
+        <a class="caption4" href="http://fengsp.github.io" data-title="fsptitle1" data-description="I watched the four riders ...">
+        <img style="width: 200px; height: 200px; background-color:#3CB371"/>
+        </a>
+    </div>
+</body>
+</html>

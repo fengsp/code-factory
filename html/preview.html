@@ -1,0 +1,671 @@
+<!DOCTYPE html>
+<!-- saved from url=(0043)http://localhost:8000/speeddial/preview/14/ -->
+<html><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+    <title>预览发布</title>
+    <meta charset="utf-8">
+    <link rel="stylesheet" href="http://ajax.googleapis.com/ajax/libs/jqueryui/1.10.2/themes/base/jquery-ui.css">
+    <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.10.2/jquery.min.js"></script>
+    <script src="http://ajax.googleapis.com/ajax/libs/jqueryui/1.10.3/jquery-ui.min.js"></script>
+<style type="text/css">
+    /*@charset"utf-8";*/
+    body,dl,dt,dd,ul,ol,li,h1,h2,h3,h4,h5,h6,form,fieldset,legend,input,button,textarea,p,th,td,tr,figure{
+        margin:0;padding:0;
+        font-family: "Lucida Grande", "HelveticaNeue", "Helvetica Neue", "Helvetica","\5FAE\8F6F\96C5\9ED1", "Arial", "sans-serif";;
+    }
+    a{
+        text-decoration:none;
+        color: #09c;
+
+    }
+    /* for html5 */
+    article, aside, details, figcaption, figure,
+    footer, header, hgroup, menu, nav, section {
+        display:block;
+    }
+    ol,ul{
+        list-style:none;
+    }
+    h1,h2,h3,h4,h5,h6{
+        font-size:100%;
+        font-weight:normal;
+    }
+    em{
+        font-style:normal;
+        font-weight:normal;
+    }
+    fieldset,img{
+        border:0;
+    }
+    input,button,textarea,select{
+        font-size:100%;
+    }
+    input,select,img{
+        vertical-align:middle;
+    }
+    .clearfix:after,#main-con:after{
+        content:".";
+        display:block;
+        clear:both;
+        height:0;
+        visibility:hidden;
+    }
+    .clearfix{
+        *zoom:1;
+    }
+
+    input:-moz-placeholder {
+        color:#ccc;
+    }
+    input::-webkit-input-placeholder{
+        color:#ccc;
+    }
+    .placeholder{
+        color:#ccc;
+    }
+    .fl{
+        float: left;
+    }
+    #header{
+        height: 53px;
+    }
+    .wrap{
+        min-width:940px;
+    }
+    .w940{
+        width: 940px;
+        margin: 0 auto;
+    }
+    .relative{
+        position: relative;
+    }
+    .home{
+        float: left;
+    }
+    .slogan{
+        display: block;
+        height: 31px;
+        line-height: 31px;
+        padding-left: 10px;
+        color: #666;
+        font-size: 16px;
+        position: absolute;
+        top:12px;
+        left:209px;
+    }
+    .header-r{
+        position: absolute;
+        height: 26px;
+        width: 237px;
+        right:0px;
+        top:13px;
+    }
+
+
+
+    #nav ul{
+        width: 940px;
+        margin: 0 auto;
+    }
+    #nav ul li{
+        cursor: pointer;
+        list-style: none;
+        float: left;
+        width: 135px;
+        height: 36px;
+        line-height: 36px;
+        text-align: center;
+        position: relative;
+        border-right: 1px solid #666;
+        border-left: 1px solid #232323 ;
+        z-index: 2;
+    }
+    #nav ul li:first-child{
+        border-left: none;
+    }
+    #nav ul li:last-child{
+        border-right: none;
+    }
+    #nav ul li .lnk{
+        color:#ddd;
+        font-size: 14px;
+    }
+    #nav .on{
+        background-color: #2a2a2a;
+    }
+    #nav .mouse-on{
+        background-color: #2a2a2a;
+    }
+    .menu{
+        position: absolute;
+        top:36px;
+        left: 0px;
+        padding: 0 16px;
+        width: 100px;
+        background-color: #1a1a1a;
+        font-size: 12px;
+        display: none;
+    }
+    .menu a{
+        color: #999;
+        display: block;
+        text-align:left;
+        border-bottom:1px #353535 solid;
+    }
+    .menu a:hover{
+        color:#fff;
+    }
+    .wrap{
+        background-color: #fff;
+        position: relative;
+        z-index: 1;
+    }
+    .main{
+        width: 940px;
+        margin: 20px auto;
+        font-size: 12px;
+        color: #333;
+        font-weight: normal;
+    }
+    .ui-widget-content a{
+        color: #0099cc;
+    }
+    .t-center{
+        text-align: center;
+    }
+    .t-right{
+        text-align: right;
+    }
+    .pd-left-10{
+        padding-left: 10px;
+    }
+    .pd-left-5{
+        padding-left: 5px;
+    }
+    .mtop20{
+        margin-top: 20px;
+    }
+    .mleft20{
+        margin-left: 20px;
+    }
+    .font-16{
+        font-size: 16px;
+    }
+    .font-14{
+        font-size: 14;
+    }
+    .color-red{
+        color:#A1191B ;
+    }
+    .bg-eee{
+        background-color: #eee;
+    }
+    /*---------------*/
+    table {
+        margin-top: 20px;
+        border: 1px solid #aaa ;
+        width: 100%;
+    }
+    table td{
+        padding: 5px;
+        border:  1px solid #aaa ;
+        border-left: none;
+        border-bottom: none ;
+    }
+    table tr td:last-child{
+        border-right: none;
+    }
+    table tr:first-child td{
+        border-top: none;
+    }
+    table tr:last-child td{
+        border-bottom:none ;
+    }
+    /*-------表头在上面----------*/
+    .table-style1 tr td:first-child{
+        color: #555;
+        background-color: #e6e6e6;
+    }
+    /*-------表头在侧面-----------*/
+    .table-style2 tr:first-child td{
+        color: #555;
+        background-color: #e6e6e6;
+    }
+    /*---------------------------*/
+    #nav{
+        background:-webkit-gradient(linear, 0 0, 0 100%, from(#525252), to(#232323));
+        background:-moz-linear-gradient(top, #666,#232323);
+        background: -o-linear-gradient(top, #666,#232323);
+        border-top: 1px solid #000;
+        border-bottom: 1px solid #000;
+    }
+    .hello{
+        text-align: right;
+        width: 50%;
+        float: right;
+    }
+    .hello span{
+        padding:0 5px ;
+    }
+    .tit{
+        width: 50%;
+        float: left;
+    }
+    .short-input{
+        width: 200px;
+    }
+    .long-input{
+        width: 400px;
+    }
+    .page .current{
+        border: 1px solid #d3d3d3;
+        color: #fff;
+        background-color: #555;
+        padding: 3px 5px;
+    }
+    .page span{
+        padding-right: 10px;
+    }
+    .page a{
+        border: 1px solid #d3d3d3;
+        padding: 3px 5px;
+    }
+    /*------*/
+    .filter{
+        border: 1px solid #aaa;
+        padding: 10px 0;
+        background-color: #F7FAFF;
+    }
+    .filter span{
+        padding-left: 20px;
+    }
+    .filter a{
+        margin-left: 20px;
+    }
+    .filter .short-input{
+        width: 130px;
+    }
+    /*----------*/
+    .file-box{
+        position: relative;
+    }
+    .file-input{
+        position: absolute;
+        top:0;
+        left:0;
+        width: 80px;
+        height: 29px;
+        cursor: pointer;
+        opacity: 0;
+    }
+    /*-------*/
+    .bind{
+        cursor: pointer;
+    }
+    #dialog,#publish_dialog{
+        font-size: 12px;
+    }
+    #dialog select{
+        min-width: 500px;
+    }
+    #dialog .select-box{
+        width: 500px;
+        overflow-x: scroll;
+
+    }
+    /*-----------*/
+    #header{
+        border-bottom: 1px solid #242424;
+    }
+    #menu{
+        position: absolute;
+        left: 0px;
+        top: 56px;
+        border: 1px solid #ccc;
+        width: 150px;
+        background-color: #e6e6e6;
+    }
+    .ui-icon-triangle{
+        padding: 7px 7px 6px 7px;
+        position: absolute;
+        left: -23px;
+        top: 56px;
+        border: 1px solid #CCCCCC;
+        border-left: none;
+        width: 16px;
+        cursor: pointer;
+    }
+    #menu h2{
+        padding: 5px;
+
+    }
+    .sub-menu{
+        background-color: #fff;
+    }
+    .sub-menu a{
+        display: block;
+        font-size: 14px;
+        padding: 5px;
+    }
+    .portlet-header .ui-icon,#menu .ui-icon {
+        float: right;
+    }
+    #menu .ui-widget-header{
+        border: none;
+        cursor: pointer;
+        font-size: 14px;
+    }
+    .portlet-header{
+        padding: 5px;
+    }
+
+    /* ------------------------------------------------------------------------ */
+    /* Following content for preview */
+.main:after,
+.main:before {
+    content: "";
+    display: table;
+}
+.main:after {
+    clear: both;
+    overflow: hidden;
+}
+#strategy-list {
+    width: 260px;
+    float: left;
+}
+#opera-container {
+    margin-top: 20px;
+    margin-left: 15px; 
+    float: left;
+    width:320px;
+    min-height: 340px; 
+    overflow:hidden;
+    border: 1px solid #aaa; 
+}
+#opera-container .row { 
+    overflow: hidden;
+}
+#opera-container .folderContent{
+    overflow: hidden;
+    width: 100%;
+    background-color: #484848;
+}
+#opera-container .icon { 
+    float:left; 
+    margin:9px 11px;
+}
+#opera-container img { 
+    width: 56px;
+    height: 56px;
+    border-radius:12px;
+    -moz-border-radius: 12px;
+    -webkit-border-radius: 12px; 
+}
+#opera-container .folder { 
+    float:left; 
+    margin:9px 11px; 
+}
+#opera-container .ico_txt { 
+    text-align:center; 
+    font-family:Georgia, Times, serif; 
+    font-size:10px; 
+    color:#555; 
+}
+#opera-container .folderContent .ico_txt { 
+    text-align:center; 
+    font-family:Georgia, Times, serif; 
+    font-size:10px; 
+    color:#fff; 
+}
+#opera-container a {
+     outline:none; 
+ }
+#opera-container p { 
+    padding:0; 
+    margin:0; 
+}
+#opera-container img { 
+    border:0; 
+}
+#web-preview {
+    margin-top: 20px;
+    float: left;
+    margin-left: 15px;
+    width:320px;
+    min-height: 340px;
+    overflow:hidden;
+    border: 1px solid #aaa; 
+}
+#preview-frame {
+    width: 100%;
+    min-height: 340px;
+}
+#marginBtm {
+    float: left;
+    width: 100%;
+    height: 30px;
+}
+</style>
+    
+<script type="text/javascript">
+$(document).ready(function()
+{
+	
+	$(".ico_btn").click(function(event) {
+		var element = $(this);
+		event.preventDefault();
+		element.fadeTo("fast", "0.6", function(){
+		});
+		element.fadeTo("fast", "1", function(){
+		});
+	});
+	$(".icon").click(function(event) {
+		var element = $(this);
+        aElement = element.children('.ico_btn').first();
+        $('#preview-frame').attr('src', aElement.attr('href'));
+	});
+    
+    $(".folder").click(function(event) {
+        var element = $(this);
+        var folderContentId = "#folderContent_" + element.attr('id');
+        var folderContent = $(folderContentId);
+        folderContent.remove();
+
+        var folderContentShown = folderContent.css("display") != "none";
+
+        var clickedFolder = $(this);
+        clickedFolder.parent(".row").after(folderContent);
+
+        $("body").find(".row .folder,.row .icon").not(clickedFolder).each(function() {
+            if (!folderContentShown) $(this).animate({
+                opacity: 0.00
+            }, "fast");
+            else $(this).animate({
+                opacity: 1.00
+            }, "fast");
+        });
+
+        folderContent.slideToggle("fast");
+    	folderContent.find(".ico_btn").click(function(event) {
+    		var element = $(this);
+    		event.preventDefault();
+    		element.fadeTo("fast", "0.6", function(){
+    		});
+    		element.fadeTo("fast", "1", function(){
+    		});
+    	});
+    	folderContent.find(".icon").click(function(event) {
+    		var element = $(this);
+            aElement = element.children('.ico_btn').first();
+            $('#preview-frame').attr('src', aElement.attr('href'));
+    	});
+        event.preventDefault();
+    });
+    
+
+});
+</script>    
+    
+
+</head>
+<body>
+
+<div class="main">
+   
+    
+<table id="strategy-list" class="table-style2 ui-corner-all ui-widget-content" cellspacing="0">
+    <tbody><tr>
+        <td>策略名</td>
+    </tr>
+    
+    <tr>
+        <td><a class="bind" strat="default" href="http://localhost:8000/speeddial/bind/13/">default</a></td>
+    </tr>
+    
+    <tr>
+        <td><a class="bind" strat="fsp1" href="http://localhost:8000/speeddial/bind/14/">fsp1</a></td>
+    </tr>
+    
+    <tr>
+        <td><a class="bind" strat="fsp2" href="http://localhost:8000/speeddial/bind/15/">fsp2</a></td>
+    </tr>
+    
+</tbody></table>
+
+<div id="opera-container">
+    	<div class="row">
+        	<div class="icon">
+        		<a href="http://ezine.oupeng.com" title="Text" class="ico_btn"><img src="images/icon_text.png" alt="Text" /></a>
+                <p class="ico_txt">Text</p>
+            </div>
+            <div class="folder" id="sd0">
+        		<a href="http://www.google.com/calendar/" title="Calendar" class="ico_btn"><img src="images/icon_folder.png" alt="folder" /></a>
+                <p class="ico_txt">folder</p>
+            </div>
+            <div class="folder" id="sd1">
+        		<a href="http://flickr.com/" title="Photos" class="ico_btn"><img src="images/test.jpg" alt="Photos" /></a>
+                <p class="ico_txt">Photos</p>
+            </div>
+            <div class="icon upright">
+
+        		<a href="http://www.apple.com/aperture/" title="Camera" class="ico_btn"><img src="images/icon_camera.png" alt="Camera" /></a>
+                <p class="ico_txt">Camera</p>
+            </div>
+        </div>
+        <div class="row">
+        	<div class="icon upleft">
+        		<a href="http://www.youtube.com/" title="YouTube" class="ico_btn"><img src="images/icon_youtube.png" alt="YouTube" /></a>
+                <p class="ico_txt">YouTube</p>
+
+            </div>
+            <div class="icon upleft">
+        		<a href="http://finance.yahoo.com/" title="Yahoo! Finance" class="ico_btn"><img src="images/icon_stocks.png" alt="Yahoo! Finance" /></a>
+                <p class="ico_txt">Stocks</p>
+            </div>
+            <div class="icon upright">
+        		<a href="http://maps.google.com/" title="Google Maps" class="ico_btn"><img src="images/icon_maps.png" alt="Google Maps" /></a>
+                <p class="ico_txt">Maps</p>
+
+            </div>
+            <div class="icon upright">
+        		<a href="http://weather.yahoo.com/" title="Weather" class="ico_btn"><img src="images/icon_weather.png" alt="Weather" /></a>
+                <p class="ico_txt">Weather</p>
+            </div>
+        </div>
+        <div class="row">
+        	<div class="icon downleft">
+
+        		<a href="http://en.wikipedia.org/wiki/Clock" title="Clock" class="ico_btn"><img src="images/icon_clock.png" alt="Clock" /></a>
+                <p class="ico_txt">Clock</p>
+            </div>
+            <div class="icon downleft">
+        		<a href="http://www.apple.com/iphone/features/calculator.html" title="Calculator" class="ico_btn"><img src="images/icon_calculator.png" alt="Calculator" /></a>
+                <p class="ico_txt">Calculator</p>
+            </div>
+            <div class="icon downright">
+
+        		<a href="http://en.wikipedia.org/wiki/Note_taking" title="Notes" class="ico_btn"><img src="images/icon_notes.png" alt="Notes" /></a>
+                <p class="ico_txt">Notes</p>
+            </div>
+            <div class="icon downright">
+        		<a href="http://css-tricks.com/" title="Settings" class="ico_btn"><img src="images/icon_settings.png" alt="Settings" /></a>
+                <p class="ico_txt">Settings</p>
+            </div>
+        </div>
+
+        <div class="row">
+        	<div class="icon downleft">
+        		<a href="http://www.apple.com/itunes/" title="iTunes" class="ico_btn"><img src="images/icon_itunes.png" alt="iTunes" /></a>
+                <p class="ico_txt">iTunes</p>
+            </div>
+            <div class="icon downleft">
+        		<a href="http://www.apple.com/iphone/appstore/" title="App Store" class="ico_btn"><img src="images/icon_appstore.png" alt="App Store" /></a>
+                <p class="ico_txt">App Store</p>
+            </div>
+            <div class="icon downright">
+        		<a href="index.html" title="Respring" class="ico_btn"><img src="images/icon_respring.png" alt="Respring" /></a>
+                <p class="ico_txt">Respring</p>
+            </div>
+            <div class="icon downright">
+        		<a href="http://www.marcofolio.net/" title="Marcofolio" class="ico_btn"><img src="images/icon_marcofolio.png" alt="Marcofolio" /></a>
+                <p class="ico_txt">Marcofolio</p>
+            </div>
+            
+        </div>
+        
+        <div class="row">
+            <div class="folder" id="sd1">
+        		<a href="http://www.google.com/calendar/" title="Calendar" class="ico_btn"><img src="images/icon_folder.png" alt="folder" /></a>
+                <p class="ico_txt">folder</p>
+            </div>
+        </div>
+        
+        <div id="folderContent_sd0" class="folderContent" style="display:none">
+        	<div class="icon downleft">
+        		<a href="http://www.apple.com/itunes/" title="iTunes" class="ico_btn"><img src="images/icon_itunes.png" alt="iTunes" /></a>
+                <p class="ico_txt">iTunes</p>
+            </div>
+            <div class="icon downleft">
+        		<a href="http://www.apple.com/iphone/appstore/" title="App Store" class="ico_btn"><img src="images/icon_appstore.png" alt="App Store" /></a>
+                <p class="ico_txt">App Store</p>
+            </div>
+            <div class="icon downright">
+        		<a href="index.html" title="Respring" class="ico_btn"><img src="images/icon_respring.png" alt="Respring" /></a>
+                <p class="ico_txt">Respring</p>
+            </div>
+            <div class="icon downright">
+        		<a href="http://www.marcofolio.net/" title="Marcofolio" class="ico_btn"><img src="images/icon_marcofolio.png" alt="Marcofolio" /></a>
+                <p class="ico_txt">Marcofolio</p>
+            </div>
+            <div class="icon downright">
+        		<a href="http://www.marcofolio.net/" title="Marcofolio" class="ico_btn"><img src="images/icon_marcofolio.png" alt="Marcofolio" /></a>
+                <p class="ico_txt">Marcofolio</p>
+            </div>
+        </div>
+        
+        <div id="folderContent_sd1" class="folderContent" style="display:none">
+            <div class="icon downright">
+
+        		<a href="http://en.wikipedia.org/wiki/Note_taking" title="Notes" class="ico_btn"><img src="images/icon_notes.png" alt="Notes" /></a>
+                <p class="ico_txt">Notes</p>
+            </div>
+            <div class="icon downright">
+        		<a href="http://css-tricks.com/" title="Settings" class="ico_btn"><img src="images/icon_settings.png" alt="Settings" /></a>
+                <p class="ico_txt">Settings</p>
+            </div>
+        </div>
+</div>
+
+<div id="web-preview">
+    <iframe id="preview-frame"></iframe> 
+</div>
+
+<div id="marginBtm"></div>
+
+</div>
+
+
+
+
+
+</body></html>

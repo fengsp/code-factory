@@ -21,8 +21,8 @@ from rq import Queue
 from testmodule import count_words_at_url
 
 
-q = Queue('fsp', connection=Redis(db=1))
+q = Queue(connection=Redis())
 
-
-result = q.enqueue(count_words_at_url, 'http://www.baidu.com')
-print type(result)
+for i in xrange(10000):
+    result = q.enqueue(count_words_at_url, 'http://www.baidu.com')
+    print type(result)

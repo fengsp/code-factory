@@ -1,4 +1,7 @@
 # -*- coding: utf-8 -*-
+"""
+    Simple Tornado demo
+"""
 import tornado.httpserver
 import tornado.ioloop
 import tornado.options

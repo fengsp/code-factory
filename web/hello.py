@@ -9,6 +9,7 @@ import tornado.web
 from tornado.options import define, options
 
 
+# Tornado uses the type parameter to do basic type checking on the parameter
 define("port", default=8000, help="run on the given port", type=int)
 
 

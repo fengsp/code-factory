@@ -15,12 +15,15 @@ define("port", default=8000, help="run on the given port", type=int)
 
 
 class IndexHandler(tornado.web.RequestHandler):
+    @tornado.web.asynchronous
     def get(self):
         query = self.get_argument('q')
-        client = tornado.httpclient.HTTPClient()
-        response = client.fetch("http://www.baidu.com")
-        now = datetime.datetime.utcnow()
-        self.write("sync")
+        client = tornado.httpclient.AsyncHTTPClient()
+        client.fetch("http://www.baidu.com", callback=self.on_response)
+
+    def on_response(self, response):
+        self.write('async')
+        self.finish()
 
 
 if __name__ == "__main__":

@@ -1,20 +1,20 @@
 package main
 
 import (
-    "fmt"
-    "net"
-    "os"
-    "time"
+	"fmt"
+	"net"
+	"os"
+	"time"
 )
 
 func main() {
-    fmt.Println("Welcome to the playground!")
+	fmt.Println("Welcome to the playground!")
 
-    fmt.Println("The time is", time.Now())
+	fmt.Println("The time is", time.Now())
 
-    fmt.Println("And if you try to open a file:")
-    fmt.Println(os.Open("/tmp/hello.go"))
+	fmt.Println("And if you try to open a file:")
+	fmt.Println(os.Open("/tmp/hello.go"))
 
-    fmt.Println("Or access the network:")
-    fmt.Println(net.Dial("tcp", "google.com"))
+	fmt.Println("Or access the network:")
+	fmt.Println(net.Dial("tcp", "google.com"))
 }

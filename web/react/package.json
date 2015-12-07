@@ -1,0 +1,13 @@
+{
+  "name": "hello-react",
+	"version": "0.1.0",
+	"dependencies": {
+		"react": "*",
+		"react-dom": "*"
+	},
+	"devDependencies": {
+		"webpack": "",
+		"webpack-dev-server": "",
+		"jsx-loader": ""
+	}
+}

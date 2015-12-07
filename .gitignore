@@ -41,3 +41,7 @@ nosetests.xml
 *.dll
 *.exe
 target
+
+# For JS
+node_modules/
+bundle.js

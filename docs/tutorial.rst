@@ -1,6 +1,0 @@
-.. tutorial
-
-Turorial
-========
-
-Tutorial.

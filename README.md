@@ -1,7 +1,7 @@
-CodeFactory
-===========
+Code Factory
+============
 
-Used for code practice and learning...
+Try new things here :)
 
 	 ._________________.
  	 | _______________ |
